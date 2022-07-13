@@ -49,7 +49,7 @@ git clone https://github.com/kug1/aniquote && cd ./aniquote
 ./install.sh
 ```
 
-_You can uninstall with `deno uninstall index.ts`_
+_You can uninstall with `deno uninstall aniquote`_
 
 ## Acknowledgements
 
