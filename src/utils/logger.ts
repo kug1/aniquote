@@ -1,4 +1,3 @@
-// deno-lint-ignore-file no-explicit-any
 import * as nano from "https://deno.land/x/nanocolors@0.1.12/mod.ts";
 import { QuoteModel } from "../models/quote.model.ts";
 import { process } from "https://deno.land/std@0.147.0/node/process.ts";
@@ -8,22 +7,6 @@ import { process } from "https://deno.land/std@0.147.0/node/process.ts";
 export class Logger {
   getRandomNumber(min: number, max: number) {
     return Math.floor(Math.random() * (max - min)) + min;
-  }
-
-  public log(data: any) {
-    console.log(data);
-  }
-
-  public alert(...data: any) {
-    console.log(nano.yellow(data));
-  }
-
-  public success(...data: any) {
-    console.log(nano.green(data));
-  }
-
-  public error(...data: any) {
-    console.error(nano.red(data));
   }
 
   public async funky(str: string, delay: number, randomized: boolean) {
