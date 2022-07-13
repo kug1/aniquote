@@ -2,8 +2,6 @@ import * as nano from "https://deno.land/x/nanocolors@0.1.12/mod.ts";
 import { QuoteModel } from "../models/quote.model.ts";
 import { process } from "https://deno.land/std@0.147.0/node/process.ts";
 
-// Should get get rid of "any" types
-
 export class Logger {
   getRandomNumber(min: number, max: number) {
     return Math.floor(Math.random() * (max - min)) + min;
