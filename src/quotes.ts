@@ -8,15 +8,19 @@ export class Quotes {
     const res = await fetch(environment.baseUrl + endpoint);
     const data = await res.json();
 
-    if (endpoint === environment.list) {
-      console.table(data);
-    } else if (
-      endpoint.includes(environment.byCharacter) ||
-      endpoint.includes(environment.byAnime)
-    ) {
-      this.logger.logArrQuotes(data);
+    if (!data.error) {
+      if (endpoint === environment.list) {
+        console.table(data);
+      } else if (
+        endpoint.includes(environment.byCharacter) ||
+        endpoint.includes(environment.byAnime)
+      ) {
+        this.logger.logArrQuotes(data);
+      } else {
+        this.logger.logQuote(data);
+      }
     } else {
-      this.logger.logQuote(data);
+      throw data.error;
     }
   }
 }

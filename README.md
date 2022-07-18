@@ -1,9 +1,11 @@
 <h1 align="center">aniquote</h1>
 <h3 align="center">Anime quote fetcher</h3>
 
-<a href="https://opensource.org/licenses/MIT">
-  <img src="https://img.shields.io/badge/License-MIT-yellow.svg">
-</a>
+<div align="center">
+  <a href="https://opensource.org/licenses/MIT">
+    <img src="https://img.shields.io/badge/License-MIT-brightgreen.svg">
+  </a>
+</div>
 
 ---
 

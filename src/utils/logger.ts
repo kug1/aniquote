@@ -30,8 +30,6 @@ export class Logger {
     this.logQuote(quoteArr[this.getRandomNumber(0, length)]);
   }
 
-  // There could be a better way of writing it? Should google.
-
   public logHelpMessage() {
     console.log(
       "\nUsage:\n",
