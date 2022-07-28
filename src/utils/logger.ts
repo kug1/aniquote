@@ -20,9 +20,9 @@ export class Logger {
   }
 
   public async logQuote(quote: QuoteModel) {
-    await this.funky(nano.red(quote.anime + "\n"), 200, true);
-    await this.funky(nano.cyan(quote.character + ":"), 150, true);
-    await this.funky(nano.bold('\t"' + quote.quote + '"'), 130, true);
+    await this.funky(nano.red(quote.anime + "\n"), 150, true);
+    await this.funky(nano.cyan(quote.character + ":"), 130, true);
+    await this.funky(nano.bold('"' + quote.quote + '"'), 105, true);
   }
 
   public logArrQuotes(quoteArr: QuoteModel[]) {
