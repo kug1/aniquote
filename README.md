@@ -10,7 +10,7 @@
 
 ## Why?
 
-While i was browsing [Unixporn](https://www.reddit.com/r/unixporn/) looking to steal someone's dotfiles i saw some anime-related (Berserk) rices and thought people might like to print a quote of that character or from the series. And since im a beginner to Deno and never did CLI tools before i thought i'd give it a try.
+While i was browsing [Unixporn](https://www.reddit.com/r/unixporn/) looking to steal someone's dotfiles (im too lazy to rice myself) i saw some anime-related rices and thought people might like to print a quote of that character or from the series. And since im a beginner to Deno and never did CLI tools before i thought i'd give it a try.
 
 ## Requirements
 
