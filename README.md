@@ -1,5 +1,4 @@
 <h1 align="center">aniquote</h1>
-<h3 align="center">Anime quote fetcher</h3>
 
 <div align="center">
   <a href="https://opensource.org/licenses/MIT">
@@ -9,7 +8,24 @@
 
 ---
 
-## Commands
+## Why?
+
+While i was browsing [Unixporn](https://www.reddit.com/r/unixporn/) looking to steal someone's dotfiles i saw some anime-related (Berserk) rices and thought people might like to print a quote of that character or from the series. And since im a beginner to Deno and never did CLI tools before i thought i'd give it a try.
+
+## Requirements
+
+- [Deno](https://deno.land/manual/getting_started/installation)
+
+## Installation
+
+```sh
+git clone https://github.com/kug1/aniquote && cd ./aniquote
+./install.sh
+```
+
+_You can uninstall with `deno uninstall aniquote`_
+
+## Usage
 
 ```
 Usage:
@@ -39,19 +55,6 @@ Examples:
         aniquote -c Guts
                 Prints a random quote of Guts.
 ```
-
-## Dependencies
-
-- [Deno](https://deno.land/manual/getting_started/installation)
-
-## Installation
-
-```sh
-git clone https://github.com/kug1/aniquote && cd ./aniquote
-./install.sh
-```
-
-_You can uninstall with `deno uninstall aniquote`_
 
 ## Acknowledgements
 

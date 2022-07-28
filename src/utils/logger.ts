@@ -20,9 +20,9 @@ export class Logger {
   }
 
   public async logQuote(quote: QuoteModel) {
-    await this.funky(nano.red(quote.anime + "\n"), 100, true);
+    await this.funky(nano.red(quote.anime + "\n"), 200, true);
     await this.funky(nano.cyan(quote.character + ":"), 150, true);
-    await this.funky(nano.bold('\t"' + quote.quote + '"'), 100, true);
+    await this.funky(nano.bold('\t"' + quote.quote + '"'), 130, true);
   }
 
   public logArrQuotes(quoteArr: QuoteModel[]) {
@@ -50,7 +50,7 @@ export class Logger {
       "\t\tPrint help message\n",
       "\nExamples:\n",
       "\taniquote --anime Kuroko no Basuke",
-      "\n\t\tPrints a random Kuroko no Basuke quote.\n",
+      "\n\t\tPrints a random Kuroko no Basket quote.\n",
       "\n\taniquote -c Guts",
       "\n\t\tPrints a random quote of Guts.",
       "\n"
