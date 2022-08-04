@@ -28,32 +28,25 @@ _You can uninstall with `deno uninstall aniquote`_
 ## Usage
 
 ```
-Usage:
-        aniquote [flag]
-        aniquote [command]
+  Usage:   aniquote                                                                                         
+  Version: v2.0.0
 
+  Description:
 
-Available Commands
-        random    Print a random quote.
-        list      Print a list of all available anime in a table.
-        help      Print help message.
+    A CLI tool for printing anime quotes in your terminal.
 
-Flags:
-        --anime, -a <anime-name>
-                Prints a random quote from the anime.
+  Options:
 
-        --character, -c <character-name>
-                Prints a random quote of the character.
+    -h, --help                    - Show this help.                            
+    -V, --version                 - Show the version number for this program.  
+    -a, --anime      <anime>      - Print a quote from the specified anime.    
+    -c, --character  <character>  - Print a quote of the specified character.  
 
-        --help, -h
-                Print help message
+  Commands:
 
-Examples:
-        aniquote --anime Kuroko no Basuke
-                Prints a random Kuroko no Basuke quote.
-
-        aniquote -c Guts
-                Prints a random quote of Guts.
+    random   - Print a random quote.                                  
+    list     - List all available anime.                              
+    upgrade  - Upgrade aniquote executable to latest or given version.
 ```
 
 ## Acknowledgements

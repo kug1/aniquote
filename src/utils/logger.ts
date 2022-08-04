@@ -1,10 +1,14 @@
-import * as nano from "https://deno.land/x/nanocolors@0.1.12/mod.ts";
 import { QuoteModel } from "../models/quote.model.ts";
-import { process } from "https://deno.land/std@0.147.0/node/process.ts";
+import { colors } from "../../deps.ts";
+import { process } from "../../deps.ts";
 
 export class Logger {
   getRandomNumber(min: number, max: number) {
     return Math.floor(Math.random() * (max - min)) + min;
+  }
+
+  public error(errMsg: string) {
+    console.log(colors.red(errMsg));
   }
 
   public async funky(str: string, delay: number, randomized: boolean) {
@@ -20,9 +24,9 @@ export class Logger {
   }
 
   public async logQuote(quote: QuoteModel) {
-    await this.funky(nano.red(quote.anime + "\n"), 150, true);
-    await this.funky(nano.cyan(quote.character + ":"), 130, true);
-    await this.funky(nano.bold('"' + quote.quote + '"'), 105, true);
+    await this.funky(colors.brightRed(quote.anime + "\n"), 150, true);
+    await this.funky(colors.brightCyan(quote.character + ":"), 130, true);
+    await this.funky(colors.bold('"' + quote.quote + '"'), 105, true);
   }
 
   public logArrQuotes(quoteArr: QuoteModel[]) {
@@ -30,30 +34,15 @@ export class Logger {
     this.logQuote(quoteArr[this.getRandomNumber(0, length)]);
   }
 
-  public logHelpMessage() {
-    console.log(
-      "\nUsage:\n",
-      "\taniquote [flag]\n",
-      "\taniquote [command]\n",
-      "\n",
-      "\nAvailable Commands\n",
-      "\trandom    Print a random quote.\n",
-      "\tlist      Print a list of all available anime in a table.\n",
-      "\thelp      Print help message.",
-      "\n",
-      "\nFlags:",
-      "\n\t--anime, -a <anime-name>\n",
-      "\t\tPrints a random quote from the anime.\n",
-      "\n\t--character, -c <character-name>\n",
-      "\t\tPrints a random quote of the character.\n",
-      "\n\t--help, -h\n",
-      "\t\tPrint help message\n",
-      "\nExamples:\n",
-      "\taniquote --anime Kuroko no Basuke",
-      "\n\t\tPrints a random Kuroko no Basket quote.\n",
-      "\n\taniquote -c Guts",
-      "\n\t\tPrints a random quote of Guts.",
-      "\n"
-    );
+  public list(data: string[]) {
+    data.sort((a: string, b: string) => a.localeCompare(b));
+
+    // const res = [];
+
+    // while (data.length) {
+    //   res.push(data.splice(0, 7));
+    // }
+
+    console.table(data);
   }
 }

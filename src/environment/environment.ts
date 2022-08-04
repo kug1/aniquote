@@ -8,6 +8,4 @@ export const environment = {
   list: "available/anime",
   byCharacter: "quotes/character?name=",
   byAnime: "quotes/anime?title=",
-
-  // Adding caching would be really good. Allthough im not sure how i can implement it.
 };
