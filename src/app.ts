@@ -9,7 +9,7 @@ export class App {
     await new Command()
       // Main command
       .name("aniquote")
-      .version("v2.0.0")
+      .version("v2.0.1")
       .description("A CLI tool for printing anime quotes in your terminal.") 
       .arguments("<command>")
       .option(
