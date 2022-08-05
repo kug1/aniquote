@@ -1,10 +1,9 @@
 import { Quotes } from "./quotes.ts";
-import { Logger } from "./utils/logger.ts";
 import { environment } from "./environment/environment.ts";
 import { Command, UpgradeCommand, GithubProvider } from "../deps.ts";
 
 export class App {
-  constructor(private quotes: Quotes, private logger: Logger) {}
+  constructor(private quotes: Quotes) {}
 
   async run() {
     await new Command()
@@ -12,6 +11,7 @@ export class App {
       .name("aniquote")
       .version("v2.0.0")
       .description("A CLI tool for printing anime quotes in your terminal.") 
+      .arguments("<command>")
       .option(
         "-a, --anime <anime:string>",
         "Print a quote from the specified anime.", 

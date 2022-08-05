@@ -1,6 +1,5 @@
 import { QuoteModel } from "../models/quote.model.ts";
-import { colors } from "../../deps.ts";
-import { process } from "../../deps.ts";
+import { colors, process } from "../../deps.ts";
 
 export class Logger {
   getRandomNumber(min: number, max: number) {

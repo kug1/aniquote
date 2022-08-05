@@ -5,6 +5,6 @@ import { Quotes } from "./quotes.ts";
 const logger = new Logger();
 const quotes = new Quotes(logger);
 
-const app = new App(quotes, logger);
+const app = new App(quotes);
 
 export default app;
