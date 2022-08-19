@@ -2,11 +2,15 @@
 
 <div align="center">
   <a href="https://opensource.org/licenses/MIT">
-    <img src="https://img.shields.io/badge/License-MIT-brightgreen.svg">
+    <img src="https://img.shields.io/badge/license-MIT-brightgreen.svg">
+  </a>
+
+  <a href="https://animechan.vercel.app/">
+    <img src="https://img.shields.io/badge/API-animechan-informational" />
   </a>
 
   <a href="https://deno.land">
-     <img src="https://img.shields.io/badge/deno-%5E1.24.3-green?logo=deno"/>
+    <img src="https://img.shields.io/badge/deno-%5E1.24.3-blueviolet?logo=deno"/>
   </a>
 </div>
 
