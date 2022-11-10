@@ -10,16 +10,16 @@ export class App {
     await new Command()
       // Main command
       .name("aniquote")
-      .version("v2.0.1")
+      .version("v3.0.0")
       .description("A CLI tool for printing anime quotes in your terminal.")
       .action(() => {
-        this.logger.error(
+        this.logger.warn(
           "Nothing specified... Run with '--help' to see options."
         );
       })
       .option(
         "-a, --anime <anime:string>",
-        "Print a quote from the specified anime.",
+        "Print a random quote from the specified anime.",
         {
           standalone: true,
           action: async (options) => {
@@ -29,7 +29,7 @@ export class App {
       )
       .option(
         "-c, --character <character:string>",
-        "Print a quote of the specified character.",
+        "Print a random quote of the specified character.",
         {
           standalone: true,
           action: async (options) => {
@@ -46,18 +46,20 @@ export class App {
         await this.quotes.getQuote(environment.random);
       })
 
+      //// No longer supported.
+
       // List of all available anime
-      .command("list", "List all available anime.")
-      .action(async () => {
-        await this.quotes.getList();
-      })
+      // .command("list", "List all available anime.")
+      // .action(async () => {
+      //   await this.quotes.getList();
+      // })
 
       // Upgrade aniquote
       .command(
         "upgrade",
         new UpgradeCommand({
           main: "index.ts",
-          args: ["--allow-net", "--allow-env"],
+          args: ["--allow-net", "--allow-env", "--unstable"],
           provider: new GithubProvider({ repository: "kug1/aniquote" }),
         })
       )

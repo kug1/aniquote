@@ -6,6 +6,6 @@ export const environment = {
 
   random: "random",
   list: "available/anime",
-  byCharacter: "quotes/character?name=",
-  byAnime: "quotes/anime?title=",
+  byCharacter: "random/character?name=",
+  byAnime: "random/anime?title=",
 };

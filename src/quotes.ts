@@ -12,21 +12,12 @@ export class Quotes {
       this.logger.error(data.error);
     } else {
       if (endpoint.includes(environment.byCharacter)) {
-        this.logger.logArrQuotes(data);
+        this.logger.logFunkyQuote(data);
       } else if (endpoint.includes(environment.byAnime)) {
-        this.logger.logArrQuotes(data);
+        this.logger.logFunkyQuote(data);
       } else {
-        this.logger.logQuote(data);
+        this.logger.logFunkyQuote(data);
       }
     }
-  }
-
-  public async getList(): Promise<void> {
-    const res = await fetch(
-      environment.baseUrl + environment.list
-    );
-    const data = await res.json();
-
-    this.logger.list(data);
   }
 }
