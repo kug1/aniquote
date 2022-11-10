@@ -24,7 +24,7 @@ While i was browsing [Unixporn](https://www.reddit.com/r/unixporn/) looking to s
 
 ```
   Usage:   aniquote
-  Version: v2.0.0
+  Version: v3.0.0
 
   Description:
 
@@ -40,7 +40,6 @@ While i was browsing [Unixporn](https://www.reddit.com/r/unixporn/) looking to s
   Commands:
 
     random   - Print a random quote.
-    list     - List all available anime.
     upgrade  - Upgrade aniquote executable to latest or given version.
 ```
 
