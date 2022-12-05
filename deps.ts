@@ -13,9 +13,10 @@ export {
   EnumType,
 } from "https://deno.land/x/cliffy@v0.24.3/command/mod.ts";
 export {
-  UpgradeCommand,
   GithubProvider,
+  UpgradeCommand,
 } from "https://deno.land/x/cliffy@v0.24.3/command/upgrade/mod.ts";
 
+export { parseFlags } from "https://deno.land/x/cliffy@v0.25.5/flags/mod.ts";
 // Node
 export { process } from "https://deno.land/std@0.152.0/node/process.ts";

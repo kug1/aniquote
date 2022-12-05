@@ -8,6 +8,7 @@ export class Quotes {
     const res = await fetch(environment.baseUrl + endpoint);
     const data = await res.json();
 
+    // Make request based on the incoming URL.
     if (data.error) {
       this.logger.error(data.error);
     } else {

@@ -16,10 +16,6 @@
 
 ---
 
-## Why?
-
-While i was browsing [Unixporn](https://www.reddit.com/r/unixporn/) looking to steal someone's dotfiles (im too lazy to rice myself) i saw some anime-related rices and thought people might like to print a quote of that character or from the series. And since im a beginner to Deno and never did CLI tools before i thought i'd give it a try.
-
 ## Usage
 
 ```
@@ -50,7 +46,13 @@ While i was browsing [Unixporn](https://www.reddit.com/r/unixporn/) looking to s
 ## Installation
 
 ```sh
+# Clone the repository and change into the directory
 git clone https://github.com/kug1/aniquote && cd ./aniquote
+
+# Make the script executable
+chmod +x ./install.sh
+
+# Run the script
 ./install.sh
 ```
 
