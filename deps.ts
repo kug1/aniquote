@@ -1,8 +1,13 @@
-//// Deno
+//// Standart
 
-// Standart
+//// Third party
 
-// Third party
+// Deno TUI
+
+export type { Theme } from "https://deno.land/x/tui@1.3.4/mod.ts";
+export { Canvas, Tui } from "https://deno.land/x/tui@1.3.4/mod.ts";
+export { LabelComponent } from "https://deno.land/x/tui@1.3.4/src/components/mod.ts";
+export { crayon } from "https://deno.land/x/crayon@3.3.2/mod.ts";
 
 // Cliffy
 export { colors } from "https://deno.land/x/cliffy@v0.24.3/ansi/colors.ts";

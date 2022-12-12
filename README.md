@@ -20,7 +20,7 @@
 
 ```
   Usage:   aniquote
-  Version: v3.0.0
+  Version: v3.1.0
 
   Description:
 
@@ -30,13 +30,13 @@
 
     -h, --help                    - Show this help.
     -V, --version                 - Show the version number for this program.
-    -a, --anime      <anime>      - Print a quote from the specified anime.
-    -c, --character  <character>  - Print a quote of the specified character.
 
   Commands:
+    anime      <anime>  - Print a quote from the anime.
+    character  <name>   - Print a quote of the character.
+    random              - Print a random quote.
+    upgrade             - Upgrade aniquote executable to latest or given version.
 
-    random   - Print a random quote.
-    upgrade  - Upgrade aniquote executable to latest or given version.
 ```
 
 ## Requirements

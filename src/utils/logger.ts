@@ -28,7 +28,7 @@ export class Logger {
   }
 
   public async logFunkyQuote(quote: QuoteModel) {
-    await this.funky(colors.brightRed(quote.anime + "\n"), 150, true);
+    await this.funky(colors.red(quote.anime + "\n"), 150, true);
     await this.funky(colors.brightCyan(quote.character + ":"), 130, true);
     await this.funky(colors.bold('"' + quote.quote + '"'), 135, true);
   }
