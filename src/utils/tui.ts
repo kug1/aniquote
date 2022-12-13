@@ -1,13 +1,8 @@
-import { Canvas, crayon, LabelComponent, Theme, Tui } from "../../deps.ts";
+import { Canvas, crayon, keyword, LabelComponent, Tui } from "../../deps.ts";
+import { LabelColors, QuoteModel } from "./types.ts";
 
 export class TUI {
-  private baseTheme: Theme = {
-    base: crayon.lightWhite,
-    focused: crayon.bgRed,
-    active: crayon.bgBlue,
-  };
-
-  public run(value: { anime: string; character: string; quote: string }) {
+  public run(value: QuoteModel, options: LabelColors) {
     const tui = new Tui({
       style: crayon.bgBlack,
       canvas: new Canvas({
@@ -18,7 +13,7 @@ export class TUI {
 
     const titleLabel = new LabelComponent({
       tui,
-      theme: { base: crayon.lightRed },
+      theme: { base: crayon.keyword(options.titleColor) },
       align: {
         horizontal: "center",
         vertical: "top",
@@ -38,7 +33,7 @@ export class TUI {
 
     const characterlabel = new LabelComponent({
       tui,
-      theme: { base: crayon.cyan },
+      theme: { base: crayon.keyword(options.characterColor) },
       align: {
         horizontal: "center",
         vertical: "top",
@@ -50,7 +45,6 @@ export class TUI {
         get row() {
           return ~~(tui.canvas.size.rows / 2 - (this.height / 2 + 4));
         },
-        // row: 10,
         height: 2,
         width: -1,
       },
@@ -59,7 +53,7 @@ export class TUI {
 
     const quoteLabel = new LabelComponent({
       tui,
-      theme: { base: crayon.lightWhite },
+      theme: { base: crayon.keyword(options.quoteColor) },
       align: {
         horizontal: "center",
         vertical: "center",

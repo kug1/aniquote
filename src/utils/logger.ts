@@ -1,4 +1,4 @@
-import { QuoteModel } from "../models/quote.model.ts";
+import { QuoteModel } from "./types.ts";
 import { colors, process } from "../../deps.ts";
 
 export class Logger {
