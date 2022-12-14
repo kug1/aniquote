@@ -10,10 +10,11 @@ export interface QuoteModel {
 }
 
 // Colors
-export interface LabelColors {
+export interface OptionsObject {
   titleColor: string | boolean;
   characterColor: string | boolean;
   quoteColor: string | boolean;
+  tui: boolean;
 }
 
 export class ColorType extends Type<string> {

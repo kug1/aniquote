@@ -1,5 +1,5 @@
-import { QuoteModel } from "./types.ts";
-import { colors, process } from "../../deps.ts";
+import { OptionsObject, QuoteModel } from "../types/types.ts";
+import { crayon, process } from "../../deps.ts";
 
 export class Logger {
   // Squeezed it in :P
@@ -8,14 +8,14 @@ export class Logger {
   }
 
   public error(msg: string): void {
-    console.log(colors.red(msg));
+    console.log(crayon.red(msg));
   }
 
   public warn(msg: string): void {
-    console.log(colors.yellow(msg));
+    console.log(crayon.yellow(msg));
   }
 
-  public async funky(str: string, delay: number, randomized: boolean) {
+  private async funky(str: string, delay: number, randomized: boolean) {
     const sleepy = (ms: number) => {
       return new Promise((resolve) => setTimeout(resolve, ms));
     };
@@ -27,9 +27,9 @@ export class Logger {
     process.stdout.write("\n");
   }
 
-  public async logFunkyQuote(quote: QuoteModel) {
-    await this.funky(colors.red(quote.anime + "\n"), 150, true);
-    await this.funky(colors.brightCyan(quote.character + ":"), 130, true);
-    await this.funky(colors.bold('"' + quote.quote + '"'), 135, true);
+  public async logFunkyQuote(quote: QuoteModel, _options?: OptionsObject) {
+    await this.funky(crayon.red(quote.anime + "\n"), 150, true);
+    await this.funky(crayon.lightCyan(quote.character + ":"), 130, true);
+    await this.funky(crayon.bold('"' + quote.quote + '"'), 135, true);
   }
 }

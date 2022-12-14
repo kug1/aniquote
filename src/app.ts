@@ -1,7 +1,7 @@
 import { Quotes } from "./quotes.ts";
 import { Logger } from "./utils/logger.ts";
 import { environment } from "./environment/environment.ts";
-import { ColorType } from "./utils/types.ts";
+import { ColorType } from "./types/types.ts";
 import { Command, GithubProvider, UpgradeCommand } from "../deps.ts";
 
 export class App {
@@ -17,7 +17,8 @@ export class App {
         this.logger.warn("Nothing specified. Run with --help to see options.");
       })
       .globalType("color", new ColorType())
-      .group("Color options")
+      .group("Customization options")
+      .globalOption("--no-tui", "Print the quote funkly.")
       .globalOption(
         "-t, --title [color:color]",
         "Set anime title label color",
@@ -39,30 +40,33 @@ export class App {
       // Anime quote
       .command("anime", "Print a quote from the anime.")
       .arguments("<anime:string>")
-      .action(async ({ title, character, quote }, anime: string) => {
+      .action(async ({ title, character, quote, tui }, anime: string) => {
         await this.quotes.getQuote(environment.byAnime + anime, {
           titleColor: title,
           characterColor: character,
           quoteColor: quote,
+          tui: tui,
         });
       })
       // Character Quote
       .command("character", "Print a quote of the character.")
       .arguments("<name:string>")
-      .action(async ({ title, character, quote }, name: string) => {
+      .action(async ({ title, character, quote, tui }, name: string) => {
         await this.quotes.getQuote(environment.byCharacter + name, {
           titleColor: title,
           characterColor: character,
           quoteColor: quote,
+          tui: tui,
         });
       })
       // Random quote
       .command("random", "Print a random quote.")
-      .action(async ({ title, character, quote }) => {
+      .action(async ({ title, character, quote, tui }) => {
         await this.quotes.getQuote(environment.random, {
           titleColor: title,
           characterColor: character,
           quoteColor: quote,
+          tui: tui,
         });
       })
       // No longer supported.

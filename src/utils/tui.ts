@@ -1,8 +1,8 @@
-import { Canvas, crayon, keyword, LabelComponent, Tui } from "../../deps.ts";
-import { LabelColors, QuoteModel } from "./types.ts";
+import { Canvas, colors, crayon, LabelComponent, Tui } from "../../deps.ts";
+import { OptionsObject, QuoteModel } from "../types/types.ts";
 
 export class TUI {
-  public run(value: QuoteModel, options: LabelColors) {
+  public run(value: QuoteModel, options: OptionsObject) {
     const tui = new Tui({
       style: crayon.bgBlack,
       canvas: new Canvas({
