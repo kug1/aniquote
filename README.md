@@ -19,6 +19,31 @@
 ## Usage
 
 ```
+  Usage:   aniquote                                                                        
+  Version: 3.1.0  (New version available: v3.1.0. Run 'aniquote upgrade' to upgrade to the latest version!)
+
+  Description:
+
+    A CLI tool for printing anime quotes in your terminal.
+
+  Options:
+
+    -h, --help     - Show this help.
+    -V, --version  - Show the version number for this program.
+
+  Customization options:
+
+    --no-tui                  - Print the quote funkly.
+    -t, --title      [color]  - Set anime title label color  (Default: "red")
+    -c, --character  [color]  - Set character label color    (Default: "cyan")
+    -q, --quote      [color]  - Set quote label color        (Default: "bold")
+
+  Commands:
+
+    anime      <anime>  - Print a quote from the anime.
+    character  <name>   - Print a quote of the character.
+    random              - Print a random quote.
+    upgrade             - Upgrade aniquote executable to latest or given version.
 
 ```
 
