@@ -11,7 +11,7 @@ export class App {
     await new Command()
       // Main command
       .name("aniquote")
-      .version("3.0.0")
+      .version("3.1.0")
       .description("A CLI tool for printing anime quotes in your terminal.")
       .action(() => {
         this.logger.warn("Nothing specified. Run with --help to see options.");
@@ -34,7 +34,7 @@ export class App {
         },
       )
       .globalOption("-q, --quote [color:color]", "Set quote label color", {
-        default: "lightWhite",
+        default: "bold",
       })
       //// Subcommands
       // Anime quote
@@ -69,14 +69,6 @@ export class App {
           tui: tui,
         });
       })
-      // No longer supported.
-
-      // List all available anime
-      // .command("list", "List all available anime.")
-      // .action(async () => {
-      // await this.quotes.getList();
-      // })
-
       // Upgrade aniquote
       .command(
         "upgrade",

@@ -1,4 +1,4 @@
-import { ArgumentValue, Type, ValidationError } from "../../deps.ts";
+import { ArgumentValue, StringType, ValidationError } from "../../deps.ts";
 
 // All types and enums
 
@@ -17,8 +17,8 @@ export interface OptionsObject {
   tui: boolean;
 }
 
-export class ColorType extends Type<string> {
-  private readonly colors = [
+export class ColorType extends StringType {
+  public colors = [
     "black",
     "red",
     "green",
@@ -29,16 +29,15 @@ export class ColorType extends Type<string> {
     "white",
     "lightWhite",
     "lightRed",
+    "underline",
+    "italic",
+    "invert",
+    "bold",
   ];
 
   complete(): Array<string> {
     return this.colors;
   }
-
-  // Possible values that are going to show up in the help text.
-  // values(): Array<string> {
-  // return ["red", "brightBlue", "magenta"];
-  // }
 
   public parse({ label, name, value }: ArgumentValue): string {
     if (!this.colors.includes(value)) {

@@ -1,2 +1,4 @@
 .vscode/
 tsconfig.json
+deno.lock
+deno.json

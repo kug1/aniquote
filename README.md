@@ -19,23 +19,6 @@
 ## Usage
 
 ```
-  Usage:   aniquote
-  Version: v3.1.0
-
-  Description:
-
-    A CLI tool for printing anime quotes in your terminal.
-
-  Options:
-
-    -h, --help                    - Show this help.
-    -V, --version                 - Show the version number for this program.
-
-  Commands:
-    anime      <anime>  - Print a quote from the anime.
-    character  <name>   - Print a quote of the character.
-    random              - Print a random quote.
-    upgrade             - Upgrade aniquote executable to latest or given version.
 
 ```
 
