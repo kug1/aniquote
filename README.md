@@ -20,7 +20,7 @@
 
 ```
   Usage:   aniquote                                                                        
-  Version: 3.1.0  (New version available: v3.1.0. Run 'aniquote upgrade' to upgrade to the latest version!)
+  Version: 3.1.0 
 
   Description:
 
