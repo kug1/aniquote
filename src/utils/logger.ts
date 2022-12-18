@@ -27,9 +27,21 @@ export class Logger {
     process.stdout.write("\n");
   }
 
-  public async logFunkyQuote(quote: QuoteModel, _options?: OptionsObject) {
-    await this.funky(crayon.red(quote.anime + "\n"), 150, true);
-    await this.funky(crayon.lightCyan(quote.character + ":"), 130, true);
-    await this.funky(crayon.bold('"' + quote.quote + '"'), 135, true);
+  public async logFunkyQuote(quote: QuoteModel, options: OptionsObject) {
+    await this.funky(
+      crayon.keyword(options.titleColor)(quote.anime + "\n"),
+      150,
+      true,
+    );
+    await this.funky(
+      crayon.keyword(options.characterColor)(quote.character + ":"),
+      130,
+      true,
+    );
+    await this.funky(
+      crayon.keyword(options.quoteColor)('"' + quote.quote + '"'),
+      135,
+      true,
+    );
   }
 }
