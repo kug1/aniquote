@@ -11,7 +11,7 @@ export class App {
     await new Command()
       // Main command
       .name("aniquote")
-      .version("3.1.0")
+      .version("3.1.1")
       .description("A CLI tool for printing anime quotes in your terminal.")
       .action(() => {
         this.logger.warn("Nothing specified. Run with --help to see options.");

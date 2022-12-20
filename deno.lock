@@ -307,6 +307,15 @@
     "https://deno.land/x/tui@1.3.4/src/utils/mod.ts": "db88048756a9691b7b1c7d28d1fc0865df8361f46436b9f8f57088471ed88930",
     "https://deno.land/x/tui@1.3.4/src/utils/numbers.ts": "02a05c623d922d286c9b74332e15cb578004c772d90c077ca85470506b628308",
     "https://deno.land/x/tui@1.3.4/src/utils/sorted_array.ts": "886a2e92c4d623a694e8ce98519731be08ee475b1969c346afd187a64b159c2d",
-    "https://deno.land/x/tui@1.3.4/src/utils/strings.ts": "aeae9c4c82d3bfb54e200a8851b7774338f364b7566214eae853fb98cb8b1767"
+    "https://deno.land/x/tui@1.3.4/src/utils/strings.ts": "aeae9c4c82d3bfb54e200a8851b7774338f364b7566214eae853fb98cb8b1767",
+    "https://raw.githubusercontent.com/kug1/aniquote/v3.1.1/deps.ts": "e0ca33014bb65016d3d5b573e30b40aaf43a6035191c4335548d2ac54adb3c83",
+    "https://raw.githubusercontent.com/kug1/aniquote/v3.1.1/index.ts": "41edca3b01d0e0866488cc951d888cc3d3af5dc4e761459ed5762bbb01da775e",
+    "https://raw.githubusercontent.com/kug1/aniquote/v3.1.1/src/app.ts": "ef0ca8f570258c1b5244ce6c5a9f8167ef3485e08c701000f6dfa7314d45f56e",
+    "https://raw.githubusercontent.com/kug1/aniquote/v3.1.1/src/environment/environment.ts": "9e022a5f8a9a4dc137e4d15f06c7f360ba62ec011fe7d0eb2d496b0bd203d962",
+    "https://raw.githubusercontent.com/kug1/aniquote/v3.1.1/src/main.ts": "058e401eb14e6aacdecd07dc66ef3afce5e9219b221157177fdec832d15fc83b",
+    "https://raw.githubusercontent.com/kug1/aniquote/v3.1.1/src/quotes.ts": "0cbe49223f038f9b44f2266a04d1a7d456f3d2b7e470280ffb423f4fb3105adc",
+    "https://raw.githubusercontent.com/kug1/aniquote/v3.1.1/src/types/types.ts": "c963bed709c8dbd9e6583b10f104f3d8186fd4002b6f7b4af78547d27d706b42",
+    "https://raw.githubusercontent.com/kug1/aniquote/v3.1.1/src/utils/logger.ts": "f53c4d077b86be15860ab529420f7ad0938e51ac92a3a312bd76f51990263aae",
+    "https://raw.githubusercontent.com/kug1/aniquote/v3.1.1/src/utils/tui.ts": "5d5efb433ef7f78dddce7def198f7dbef21c41e3e6f8d9bd46f0c1364a5b29f5"
   }
 }
