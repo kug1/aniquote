@@ -16,6 +16,10 @@ export class App {
       .action(() => {
         this.logger.warn("Nothing specified. Run with --help to see options.");
       })
+      .help({
+        hints: false,
+        colors: false,
+      })
       .globalType("color", new ColorType())
       .group("Customization options")
       .globalOption("--no-tui", "Print the quote funkly.")

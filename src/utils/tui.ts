@@ -4,7 +4,7 @@ import { OptionsObject, QuoteModel } from "../types/types.ts";
 export class TUI {
   public run(value: QuoteModel, options: OptionsObject) {
     const tui = new Tui({
-      style: crayon.bgBlack,
+      style: crayon.black,
       canvas: new Canvas({
         refreshRate: 1000 / 60,
         stdout: Deno.stdout,
