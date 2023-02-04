@@ -1,6 +1,6 @@
 #!/bin/sh
 
-deno install --allow-all --unstable "$@" ./index.ts
+deno install --unstable --allow-all "$@" ./index.ts
 
 # Check user's shell, it is not necesarry by any means, but it could be used for completions.
 # user_shell=$(echo $SHELL)

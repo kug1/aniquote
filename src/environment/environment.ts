@@ -5,7 +5,7 @@ export const environment = {
   // Possible API endpoints.
 
   random: "random",
-  list: "available/anime",
+  // list: "available/anime", *DEPRECATED*
   byCharacter: "random/character?name=",
   byAnime: "random/anime?title=",
 };

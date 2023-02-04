@@ -20,25 +20,10 @@ export class Quotes {
       return;
     }
 
-    if (endpoint.includes(environment.byCharacter)) {
-      if (options.tui === false) {
-        await this.logger.logFunkyQuote(data, options);
-      } else {
-        this.tui.run(data, options);
-      }
-    } else if (endpoint.includes(environment.byAnime)) {
-      if (options.tui === false) {
-        await this.logger.logFunkyQuote(data, options);
-      } else {
-        this.tui.run(data, options);
-      }
+    if (options.tui === true) {
+      this.tui.run(data, options);
     } else {
-      //this.logger.logFunkyQuote(data); // We can pass a TUI run function in here and pass the value as a parameter.
-      if (options.tui === false) {
-        await this.logger.logFunkyQuote(data, options);
-      } else {
-        this.tui.run(data, options);
-      }
+      this.logger.logQuote(data);
     }
   }
 }

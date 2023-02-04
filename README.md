@@ -10,7 +10,7 @@
   </a>
 
   <a href="https://deno.land">
-    <img src="https://img.shields.io/badge/deno-%5E1.24.3-blueviolet?logo=deno"/>
+    <img src="https://img.shields.io/badge/deno-%5E1.30.2-blueviolet?logo=deno"/>
   </a>
 </div>
 
@@ -20,7 +20,7 @@
 
 ```
   Usage:   aniquote                                                                        
-  Version: 3.1.1 
+  Version: 3.2.0 
 
   Description:
 

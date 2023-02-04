@@ -11,7 +11,7 @@ export class App {
     await new Command()
       // Main command
       .name("aniquote")
-      .version("3.1.1")
+      .version("3.2.0")
       .description("A CLI tool for printing anime quotes in your terminal.")
       .action(() => {
         this.logger.warn("Nothing specified. Run with --help to see options.");
@@ -22,7 +22,7 @@ export class App {
       })
       .globalType("color", new ColorType())
       .group("Customization options")
-      .globalOption("--no-tui", "Print the quote funkly.")
+      .globalOption("--no-tui", "Print the quote fortune style.")
       .globalOption(
         "-t, --title [color:color]",
         "Set anime title label color",
@@ -49,7 +49,7 @@ export class App {
           titleColor: title,
           characterColor: character,
           quoteColor: quote,
-          tui: tui,
+          tui,
         });
       })
       // Character Quote
@@ -60,7 +60,7 @@ export class App {
           titleColor: title,
           characterColor: character,
           quoteColor: quote,
-          tui: tui,
+          tui,
         });
       })
       // Random quote
@@ -70,7 +70,7 @@ export class App {
           titleColor: title,
           characterColor: character,
           quoteColor: quote,
-          tui: tui,
+          tui,
         });
       })
       // Upgrade aniquote
