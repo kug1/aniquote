@@ -1,4 +1,4 @@
-import { ArgumentValue, StringType, ValidationError } from "../../deps.ts";
+import { ArgumentValue, StringType, ValidationError } from "../deps.ts";
 
 // All types and enums
 
@@ -15,6 +15,11 @@ export interface OptionsObject {
   characterColor: string | boolean;
   quoteColor: string | boolean;
   tui: boolean;
+}
+
+export interface ErrorResponse {
+  code: number;
+  desc: string;
 }
 
 export class ColorType extends StringType {
@@ -42,11 +47,9 @@ export class ColorType extends StringType {
   public parse({ label, name, value }: ArgumentValue): string {
     if (!this.colors.includes(value)) {
       throw new ValidationError(
-        `${label} "${name}" must be a valid color, but got "${value}". Possible values are: ${
-          this.colors.join(
-            ", ",
-          )
-        }`,
+        `${label} "${name}" must be a valid color, but got "${value}". Possible values are: ${this.colors.join(
+          ", "
+        )}`
       );
     }
 

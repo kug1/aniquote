@@ -1,5 +1,5 @@
 import { Canvas, crayon, LabelComponent, Tui } from "../../deps.ts";
-import { OptionsObject, QuoteModel } from "../types/types.ts";
+import { OptionsObject, QuoteModel } from "../../types/types.ts";
 
 export class TUI {
   public run(value: QuoteModel, options: OptionsObject) {

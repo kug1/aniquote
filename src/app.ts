@@ -1,7 +1,7 @@
 import { Quotes } from "./quotes.ts";
 import { Logger } from "./utils/logger.ts";
 import { environment } from "./environment/environment.ts";
-import { ColorType } from "./types/types.ts";
+import { ColorType } from "../types/types.ts";
 import { Command, GithubProvider, UpgradeCommand } from "../deps.ts";
 
 export class App {
@@ -28,14 +28,14 @@ export class App {
         "Set anime title label color",
         {
           default: "red",
-        },
+        }
       )
       .globalOption(
         "-c, --character [color:color]",
         "Set character label color",
         {
           default: "cyan",
-        },
+        }
       )
       .globalOption("-q, --quote [color:color]", "Set quote label color", {
         default: "bold",
@@ -80,7 +80,7 @@ export class App {
           main: "index.ts",
           args: ["--allow-net", "--allow-env", "--unstable"],
           provider: new GithubProvider({ repository: "kug1/aniquote" }),
-        }),
+        })
       )
       .parse();
   }

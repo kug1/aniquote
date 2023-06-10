@@ -1,5 +1,6 @@
-import { QuoteModel } from "../types/types.ts";
-import { crayon, process } from "../../deps.ts";
+import { QuoteModel } from "../../types/types.ts";
+import { crayon } from "../../deps.ts";
+import process from "node:process";
 
 export class Logger {
   // Squeezed it in :P

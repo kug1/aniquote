@@ -14,9 +14,7 @@ export { crayon, keyword } from "https://deno.land/x/crayon@3.3.3/mod.ts";
 // Cliffy
 export { colors } from "https://deno.land/x/cliffy@v0.25.7/ansi/mod.ts";
 
-export type {
-  ArgumentValue,
-} from "https://deno.land/x/cliffy@v0.25.7/command/mod.ts";
+export type { ArgumentValue } from "https://deno.land/x/cliffy@v0.25.7/command/mod.ts";
 
 export {
   Command,
@@ -28,8 +26,3 @@ export {
   GithubProvider,
   UpgradeCommand,
 } from "https://deno.land/x/cliffy@v0.25.7/command/upgrade/mod.ts";
-
-// Node
-
-/// <reference types="node:@types/node">
-export { process } from "node:process";
