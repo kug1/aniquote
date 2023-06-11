@@ -19,8 +19,8 @@
 ## Usage
 
 ```
-  Usage:   aniquote                                                                        
-  Version: 3.2.0 
+  Usage:   aniquote
+  Version: 3.2.2
 
   Description:
 
