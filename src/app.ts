@@ -7,7 +7,7 @@ import { ColorType } from "./types/types.ts";
 export class App {
   constructor(private quotes: Quotes, private logger: Logger) {}
 
-  async run() {
+  run() {
     const cmd = new Command()
       // Main command
       .name("aniquote")
