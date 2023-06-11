@@ -1,5 +1,5 @@
 import { Canvas, crayon, LabelComponent, Tui } from "../../deps.ts";
-import { OptionsObject, QuoteModel } from "../../types/types.ts";
+import { OptionsObject, QuoteModel } from "../types/types.ts";
 
 export class TUI {
   public run(value: QuoteModel, options: OptionsObject) {
@@ -11,9 +11,13 @@ export class TUI {
       }),
     });
 
-    const titleLabel = new LabelComponent({
+    const titleColor = crayon.keyword(options.titleColor.toString());
+    const characterColor = crayon.keyword(options.characterColor.toString());
+    const quoteColor = crayon.keyword(options.quoteColor.toString());
+
+    new LabelComponent({
       tui,
-      theme: { base: crayon.keyword(options.titleColor) },
+      theme: { base: titleColor },
       align: {
         horizontal: "center",
         vertical: "top",
@@ -31,9 +35,9 @@ export class TUI {
       value: value.anime,
     });
 
-    const characterlabel = new LabelComponent({
+    new LabelComponent({
       tui,
-      theme: { base: crayon.keyword(options.characterColor) },
+      theme: { base: characterColor },
       align: {
         horizontal: "center",
         vertical: "top",
@@ -51,9 +55,9 @@ export class TUI {
       value: value.character,
     });
 
-    const quoteLabel = new LabelComponent({
+    new LabelComponent({
       tui,
-      theme: { base: crayon.keyword(options.quoteColor) },
+      theme: { base: quoteColor },
       align: {
         horizontal: "center",
         vertical: "center",

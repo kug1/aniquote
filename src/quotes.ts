@@ -1,7 +1,7 @@
 import { environment } from "./environment/environment.ts";
 import { Logger } from "./utils/logger.ts";
 import { TUI } from "./utils/tui.ts";
-import { OptionsObject } from "../types/types.ts";
+import { OptionsObject } from "./types/types.ts";
 
 export class Quotes {
   constructor(private logger: Logger, private tui: TUI) {}
@@ -21,7 +21,7 @@ export class Quotes {
       data = { code: 503, desc: "Service unavailable." };
     }
 
-    if (!data.anime && data.code === 503) {
+    if (!data.anime) {
       this.logger.error(data.desc);
       return;
     }

@@ -10,6 +10,7 @@ export { LabelComponent } from "https://deno.land/x/tui@1.3.4/src/components/mod
 
 // Crayon (Cliffy's colors didn't work for some reason)
 export { crayon, keyword } from "https://deno.land/x/crayon@3.3.3/mod.ts";
+export type { Style } from "https://deno.land/x/crayon@3.3.3/mod.ts";
 
 // Cliffy
 export { colors } from "https://deno.land/x/cliffy@v0.25.7/ansi/mod.ts";

@@ -1,4 +1,4 @@
-import { QuoteModel } from "../../types/types.ts";
+import { QuoteModel } from "../types/types.ts";
 import { crayon } from "../../deps.ts";
 import process from "node:process";
 
