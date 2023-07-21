@@ -11,7 +11,7 @@ export class App {
     const cmd = new Command()
       // Main command
       .name("aniquote")
-      .version("3.2.2")
+      .version("4.0.0")
       .description("A CLI tool for printing anime quotes in your terminal.")
       .action(() => {
         cmd.showHelp();
