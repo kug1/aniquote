@@ -1,6 +1,6 @@
 export const environment = {
   // baseUrl for the API.
-  baseUrl: "https://animechan.vercel.app/api/",
+  baseUrl: "https://animechan.xyz/api/",
 
   // Possible API endpoints.
 
