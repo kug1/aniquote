@@ -5,12 +5,8 @@
     <img src="https://img.shields.io/badge/license-MIT-brightgreen.svg">
   </a>
 
-  <a href="https://animechan.vercel.app/">
+  <a href="https://animechan.xyz/">
     <img src="https://img.shields.io/badge/API-animechan-informational" />
-  </a>
-
-  <a href="https://deno.land">
-    <img src="https://img.shields.io/badge/deno-%5E1.30.2-blueviolet?logo=deno"/>
   </a>
 </div>
 
@@ -20,7 +16,7 @@
 
 ```
   Usage:   aniquote
-  Version: 4.0.0
+  Version: 4.1.0
 
   Description:
 
@@ -33,14 +29,14 @@
 
   Customization options:
 
-    --no-tui                  - Print the quote funkly.
-    -t, --title      [color]  - Set anime title label color  (Default: "red")
-    -c, --character  [color]  - Set character label color    (Default: "cyan")
-    -q, --quote      [color]  - Set quote label color        (Default: "bold")
+    --tui                          - Print the quote in a TUI instance.
+    -t, --titleColor      [color]  - Set anime title label color
+    -c, --characterColor  [color]  - Set character label color
+    -q, --quoteColor      [color]  - Set quote label color
 
   Commands:
 
-    anime      <anime>  - Print a quote from the anime.
+    anime      <title>  - Print a quote from the anime.
     character  <name>   - Print a quote of the character.
     random              - Print a random quote.
     upgrade             - Upgrade aniquote executable to latest or given version.
@@ -49,7 +45,7 @@
 
 ## Requirements
 
-- [Deno](https://deno.land/manual/getting_started/installation)
+- [Deno](https://docs.deno.com/runtime/manual/getting_started/installation)
 
 ## Installation
 
@@ -68,5 +64,5 @@ _You can uninstall with `deno uninstall aniquote`_
 
 ## Acknowledgements
 
-- [CondensedMilk7](https://github.com/CondensedMilk7) _heavily inspired by his Countryfetch project structure_
-- Thanks to [rocktimsaikia](https://github.com/rocktimsaikia) for awesome [Animechan](https://animechan.vercel.app/) API!
+- [CondensedMilk7](https://github.com/CondensedMilk7) heavily inspired by their Countryfetch project structure.
+- Thanks to [rocktimsaikia](https://github.com/rocktimsaikia) for the awesome [Animechan](https://animechan.xyz/) API!

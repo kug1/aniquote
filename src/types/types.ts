@@ -3,24 +3,24 @@ import { ArgumentValue, StringType, ValidationError } from "../../deps.ts";
 // All types and enums
 
 // Quote coming from the res object
-export interface QuoteModel {
+export type QuoteModel = {
+  id: number;
   anime: string;
   character: string;
   quote: string;
-}
+};
 
 // Colors
-export interface OptionsObject {
+export type OptionsObject = {
   titleColor: string | boolean;
   characterColor: string | boolean;
   quoteColor: string | boolean;
-  tui: boolean;
-}
+  tui: boolean | undefined;
+};
 
-export interface ErrorResponse {
-  code: number;
-  desc: string;
-}
+export type ErrorResponse = {
+  error: string;
+};
 
 export class ColorType extends StringType {
   public colors = [

@@ -1,35 +1,37 @@
 import { environment } from "./environment/environment.ts";
 import { Logger } from "./utils/logger.ts";
 import { TUI } from "./utils/tui.ts";
-import { OptionsObject } from "./types/types.ts";
+import { OptionsObject, QuoteModel } from "./types/types.ts";
 
 export class Quotes {
   constructor(private logger: Logger, private tui: TUI) {}
-
-  // TODO: Make a decide function to get rid of nested if statements.
 
   public async getQuote(
     endpoint: string,
     options: OptionsObject
   ): Promise<void> {
     const res = await fetch(environment.baseUrl + endpoint);
-    let data;
+    const data = res.headers.has("content-length") ? await res.json() : null;
 
-    if (res.ok) {
-      data = await res.json();
-    } else {
-      data = { code: 503, desc: "Service unavailable." };
+    function printBehavior(
+      data: QuoteModel,
+      instance: boolean | undefined,
+      tui: TUI,
+      logger: Logger
+    ) {
+      if (instance === true || undefined) {
+        tui.run(data, options);
+      } else {
+        logger.logQuote(data);
+      }
     }
 
-    if (!data.anime) {
-      this.logger.error(data.desc);
-      return;
-    }
-
-    if (options.tui === true) {
-      this.tui.run(data, options);
+    if (data && data.id) {
+      printBehavior(data, options.tui, this.tui, this.logger);
+    } else if (data && data.error) {
+      this.logger.error(data.error);
     } else {
-      this.logger.logQuote(data);
+      this.logger.error("Something went wrong.");
     }
   }
 }

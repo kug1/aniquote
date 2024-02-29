@@ -3,11 +3,6 @@ import { crayon } from "../../deps.ts";
 import process from "node:process";
 
 export class Logger {
-  // Squeezed it in :P
-  getRandomNumber(min: number, max: number) {
-    return Math.floor(Math.random() * (max - min)) + min;
-  }
-
   public error(msg: string): void {
     console.log(crayon.red(msg));
   }
@@ -17,6 +12,6 @@ export class Logger {
   }
 
   public logQuote(quote: QuoteModel) {
-    process.stdout.write(`${quote.quote}\n\t -- ${quote.character}\n\n`);
+    process.stdout.write(`\n${quote.quote}\n\t -- ${quote.character}\n\n`);
   }
 }

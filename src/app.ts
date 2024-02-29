@@ -11,7 +11,7 @@ export class App {
     const cmd = new Command()
       // Main command
       .name("aniquote")
-      .version("4.0.0")
+      .version("4.1.0")
       .description("A CLI tool for printing anime quotes in your terminal.")
       .action(() => {
         cmd.showHelp();
@@ -22,7 +22,7 @@ export class App {
       })
       .globalType("color", new ColorType())
       .group("Customization options")
-      .globalOption("--no-tui", "Print the quote fortune style.")
+      .globalOption("--tui", "Print the quote in a TUI instance.")
       .globalOption(
         "-t, --titleColor [color:color]",
         "Set anime title label color",
@@ -43,7 +43,7 @@ export class App {
       //// Subcommands
       // Anime quote
       .command("anime", "Print a quote from the anime.")
-      .arguments("<anime:string>")
+      .arguments("<title:string>")
       .action(
         async (
           { titleColor, characterColor, quoteColor, tui },

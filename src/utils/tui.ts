@@ -76,5 +76,6 @@ export class TUI {
     });
 
     tui.run();
+    tui.dispatch();
   }
 }
