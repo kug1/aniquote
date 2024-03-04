@@ -12,6 +12,6 @@ export class Logger {
   }
 
   public logQuote(quote: QuoteModel) {
-    process.stdout.write(`\n${quote.quote}\n\t -- ${quote.character}\n\n`);
+    process.stdout.write(`\n${quote.quote}\n -- ${quote.character}\n\n`);
   }
 }
