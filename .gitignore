@@ -4,5 +4,3 @@ deno.lock
 deno.json
 aniquote
 aniquote-*
-PKGBUILD
-.SRCINFO
