@@ -4,7 +4,7 @@ import process from "node:process";
 
 export class Logger {
   public error(msg: string): void {
-    console.log(crayon.red(msg));
+    console.log(crayon.lightRed(msg));
   }
 
   public warn(msg: string): void {

@@ -11,7 +11,11 @@ export class Quotes {
     options: OptionsObject
   ): Promise<void> {
     const res = await fetch(environment.baseUrl + endpoint);
-    const data = res.headers.has("content-length") ? await res.json() : null;
+    const data =
+      res.headers.has("content-length") &&
+      res.headers.get("content-type") === "application-json"
+        ? await res.json()
+        : null;
 
     function printBehavior(
       data: QuoteModel,
