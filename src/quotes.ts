@@ -10,13 +10,6 @@ export class Quotes {
     endpoint: string,
     options: OptionsObject
   ): Promise<void> {
-    const res = await fetch(environment.baseUrl + endpoint);
-    const data =
-      res.headers.has("content-length") &&
-      res.headers.get("content-type") === "application-json"
-        ? await res.json()
-        : null;
-
     function printBehavior(
       data: QuoteModel,
       instance: boolean | undefined,
@@ -30,12 +23,24 @@ export class Quotes {
       }
     }
 
-    if (data && data.id) {
-      printBehavior(data, options.tui, this.tui, this.logger);
-    } else if (data && data.error) {
-      this.logger.error(data.error);
-    } else {
-      this.logger.error("Something went wrong.");
+    try {
+      const res = await fetch(environment.baseUrl + endpoint);
+
+      const data =
+        res.headers.has("content-length") &&
+        res.headers.get("content-type") === "application-json"
+          ? await res.json()
+          : null;
+
+      if (data && data.id) {
+        printBehavior(data, options.tui, this.tui, this.logger);
+      } else if (data && data.error) {
+        this.logger.error(data.error);
+      } else {
+        this.logger.error("Something went wrong.");
+      }
+    } catch (_error) {
+      this.logger.error("Service unavailable.");
     }
   }
 }
