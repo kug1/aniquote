@@ -35,8 +35,8 @@ export class Quotes {
         printBehavior(data, options.tui, this.tui, this.logger);
       } else if (data && data.error) {
         this.logger.error(data.error.message);
-      } else {
-        this.logger.error("Something went wrong.");
+      } else if (data && data.message) {
+        this.logger.error("Request limit reached.");
       }
     } catch (_error) {
       this.logger.error("Service unavailable.");
