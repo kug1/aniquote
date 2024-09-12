@@ -1,4 +1,4 @@
-import { QuoteModel } from "../types/types.ts";
+import { QuoteObject } from "../types/types.ts";
 import { crayon } from "../../deps.ts";
 import process from "node:process";
 
@@ -11,7 +11,9 @@ export class Logger {
     console.log(crayon.yellow(msg));
   }
 
-  public logQuote(quote: QuoteModel) {
-    process.stdout.write(`\n${quote.quote}\n -- ${quote.character}\n\n`);
+  public logQuote(quote: QuoteObject) {
+    process.stdout.write(
+      `\n${quote.data.character.name} from ${quote.data.anime.name}\n -- ${quote.data.content}\n\n`,
+    );
   }
 }

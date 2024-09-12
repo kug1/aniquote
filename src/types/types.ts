@@ -3,11 +3,19 @@ import { ArgumentValue, StringType, ValidationError } from "../../deps.ts";
 // All types and enums
 
 // Quote coming from the res object
-export type QuoteModel = {
-  id: number;
-  anime: string;
-  character: string;
-  quote: string;
+export type QuoteObject = {
+  status: string;
+  data: {
+    content: string;
+    anime: {
+      id: number;
+      name: string;
+    };
+    character: {
+      id: number;
+      name: string;
+    };
+  };
 };
 
 // Colors
@@ -70,8 +78,8 @@ export class ColorType extends StringType {
     if (!this.colors.includes(value)) {
       throw new ValidationError(
         `${label} "${name}" must be a valid color, but got "${value}". Possible values are: ${this.colors.join(
-          ", "
-        )}`
+          ", ",
+        )}`,
       );
     }
 

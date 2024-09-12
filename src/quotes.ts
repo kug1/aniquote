@@ -1,20 +1,23 @@
 import { environment } from "./environment/environment.ts";
 import { Logger } from "./utils/logger.ts";
 import { TUI } from "./utils/tui.ts";
-import { OptionsObject, QuoteModel } from "./types/types.ts";
+import { OptionsObject, QuoteObject } from "./types/types.ts";
 
 export class Quotes {
-  constructor(private logger: Logger, private tui: TUI) {}
+  constructor(
+    private logger: Logger,
+    private tui: TUI,
+  ) {}
 
   public async getQuote(
     endpoint: string,
-    options: OptionsObject
+    options: OptionsObject,
   ): Promise<void> {
     function printBehavior(
-      data: QuoteModel,
+      data: QuoteObject,
       instance: boolean | undefined,
       tui: TUI,
-      logger: Logger
+      logger: Logger,
     ) {
       if (instance === true || undefined) {
         tui.run(data, options);
@@ -26,16 +29,12 @@ export class Quotes {
     try {
       const res = await fetch(environment.baseUrl + endpoint);
 
-      const data =
-        res.headers.has("content-length") &&
-        res.headers.get("content-type") === "application-json"
-          ? await res.json()
-          : null;
+      const data = await res.json();
 
-      if (data && data.id) {
+      if (data && data.data) {
         printBehavior(data, options.tui, this.tui, this.logger);
       } else if (data && data.error) {
-        this.logger.error(data.error);
+        this.logger.error(data.error.message);
       } else {
         this.logger.error("Something went wrong.");
       }

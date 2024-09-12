@@ -5,21 +5,17 @@ import { Command, GithubProvider, UpgradeCommand } from "../deps.ts";
 import { ColorType } from "./types/types.ts";
 
 export class App {
-  constructor(private quotes: Quotes, private logger: Logger) {}
+  constructor(
+    private quotes: Quotes,
+    private logger: Logger,
+  ) {}
 
   run() {
     const cmd = new Command()
       // Main command
       .name("aniquote")
-      .version("4.1.0")
+      .version("4.1.1")
       .description("A CLI tool for printing anime quotes in your terminal.")
-      .action(() => {
-        cmd.showHelp();
-      })
-      .help({
-        hints: false,
-        colors: false,
-      })
       .globalType("color", new ColorType())
       .group("Customization options")
       .globalOption("--tui", "Print the quote in a TUI instance.")
@@ -28,20 +24,35 @@ export class App {
         "Set anime title label color",
         {
           default: "red",
-        }
+        },
       )
       .globalOption(
         "-c, --characterColor [color:color]",
         "Set character label color",
         {
           default: "cyan",
-        }
+        },
       )
       .globalOption("-q, --quoteColor [color:color]", "Set quote label color", {
         default: "bold",
       })
+      .action(async ({ titleColor, characterColor, quoteColor, tui }) => {
+        await this.quotes.getQuote(environment.random, {
+          titleColor,
+          characterColor,
+          quoteColor,
+          tui,
+        });
+      })
+      .help({
+        hints: false,
+        colors: false,
+      })
+
       //// Subcommands
       // Anime quote
+
+      /*
       .command("anime", "Print a quote from the anime.")
       .arguments("<title:string>")
       .action(
@@ -57,13 +68,17 @@ export class App {
           });
         }
       )
+      */
+
       // Character Quote
+
+      /*
       .command("character", "Print a quote of the character.")
       .arguments("<name:string>")
       .action(
         async (
           { titleColor, characterColor, quoteColor, tui },
-          name: string
+          name: string,
         ) => {
           await this.quotes.getQuote(environment.byCharacter + name, {
             titleColor,
@@ -71,9 +86,13 @@ export class App {
             quoteColor,
             tui,
           });
-        }
+        },
       )
+      */
+
       // Random quote
+
+      /*
       .command("random", "Print a random quote.")
       .action(async ({ titleColor, characterColor, quoteColor, tui }) => {
         await this.quotes.getQuote(environment.random, {
@@ -83,6 +102,8 @@ export class App {
           tui,
         });
       })
+      */
+
       // Upgrade aniquote
       .command(
         "upgrade",
@@ -90,7 +111,7 @@ export class App {
           main: "index.ts",
           args: ["--allow-net", "--allow-env", "--unstable"],
           provider: new GithubProvider({ repository: "kug1/aniquote" }),
-        })
+        }),
       );
 
     try {

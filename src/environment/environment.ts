@@ -1,10 +1,12 @@
 export const environment = {
-  // baseUrl for the API.
-  baseUrl: "https://animechan.xyz/api/",
+  // Base URL for the API.
+  baseUrl: "https://animechan.io/api/v1/quotes/",
 
   // Possible API endpoints.
 
   random: "random",
-  byCharacter: "random/character?name=",
-  byAnime: "random/anime?title=",
+  /*
+   byCharacter: "random/character?name=",
+   byAnime: "random/anime?title=",
+  */
 };

@@ -1,8 +1,8 @@
 import { Canvas, crayon, LabelComponent, Tui } from "../../deps.ts";
-import { OptionsObject, QuoteModel } from "../types/types.ts";
+import { OptionsObject, QuoteObject } from "../types/types.ts";
 
 export class TUI {
-  public run(value: QuoteModel, options: OptionsObject) {
+  public run(value: QuoteObject, options: OptionsObject) {
     const tui = new Tui({
       style: crayon.black,
       canvas: new Canvas({
@@ -32,7 +32,7 @@ export class TUI {
         height: 2,
         width: -1,
       },
-      value: value.anime,
+      value: value.data.anime.name,
     });
 
     new LabelComponent({
@@ -52,7 +52,7 @@ export class TUI {
         height: 2,
         width: -1,
       },
-      value: value.character,
+      value: value.data.character.name,
     });
 
     new LabelComponent({
@@ -72,7 +72,7 @@ export class TUI {
         height: 10,
         width: -1,
       },
-      value: `"${value.quote}"`,
+      value: `"${value.data.content}"`,
     });
 
     tui.run();
