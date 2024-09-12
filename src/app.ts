@@ -109,7 +109,7 @@ export class App {
         "upgrade",
         new UpgradeCommand({
           main: "index.ts",
-          args: ["--allow-net", "--allow-env", "--unstable"],
+          args: ["--allow-net"],
           provider: new GithubProvider({ repository: "kug1/aniquote" }),
         }),
       );
