@@ -36,9 +36,6 @@
 
   Commands:
 
-    anime      <title>  - Print a quote from the anime.
-    character  <name>   - Print a quote of the character.
-    random              - Print a random quote.
     upgrade             - Upgrade aniquote executable to latest or given version.
 
 ```
@@ -65,4 +62,4 @@ _You can uninstall with `deno uninstall aniquote`_
 ## Acknowledgements
 
 - [CondensedMilk7](https://github.com/CondensedMilk7) heavily inspired by their Countryfetch project structure.
-- Thanks to [rocktimsaikia](https://github.com/rocktimsaikia) for the awesome [Animechan](https://animechan.xyz/) API!
+- Thanks to [rocktimsaikia](https://github.com/rocktimsaikia) for the awesome [Animechan](https://animechan.io/) API!
