@@ -5,7 +5,7 @@
     <img src="https://img.shields.io/badge/license-MIT-brightgreen.svg">
   </a>
 
-  <a href="https://animechan.xyz/">
+  <a href="https://animechan.io/">
     <img src="https://img.shields.io/badge/API-animechan-informational" />
   </a>
 </div>
