@@ -19,7 +19,7 @@ export class Quotes {
       tui: TUI,
       logger: Logger,
     ) {
-      if (instance === true || undefined) {
+      if (instance === true) {
         tui.run(data, options);
       } else {
         logger.logQuote(data);
@@ -38,7 +38,8 @@ export class Quotes {
       } else if (data && data.message) {
         this.logger.error("Request limit reached.");
       }
-    } catch (_error) {
+    } catch (error) {
+      console.log(error)
       this.logger.error("Service unavailable.");
     }
   }

@@ -1,13 +1,17 @@
-import { Canvas, crayon, LabelComponent, Tui } from "../../deps.ts";
+import { Canvas, crayon, Label, Tui } from "../../deps.ts";
 import { OptionsObject, QuoteObject } from "../types/types.ts";
 
 export class TUI {
   public run(value: QuoteObject, options: OptionsObject) {
     const tui = new Tui({
       style: crayon.black,
+      refreshRate: 1000 / 60,
       canvas: new Canvas({
-        refreshRate: 1000 / 60,
         stdout: Deno.stdout,
+        size: {
+          columns: 79,
+          rows: 90
+        }
       }),
     });
 
@@ -15,8 +19,8 @@ export class TUI {
     const characterColor = crayon.keyword(options.characterColor.toString());
     const quoteColor = crayon.keyword(options.quoteColor.toString());
 
-    new LabelComponent({
-      tui,
+    new Label({
+      parent: tui,
       theme: { base: titleColor },
       align: {
         horizontal: "center",
@@ -24,19 +28,20 @@ export class TUI {
       },
       rectangle: {
         get column() {
-          return ~~(tui.canvas.size.columns / 2 - this.width / 2);
+          return ~~(tui.canvas.size.value.rows / 2 - this.height / 2);
         },
         get row() {
-          return ~~(tui.canvas.size.rows / 2 - (this.height / 2 + 6));
+          return ~~(tui.canvas.size.value.rows / 2 - (this.height / 2 + 6));
         },
         height: 2,
         width: -1,
       },
-      value: value.data.anime.name,
+      text: value.data.anime.name,
+      zIndex: 0,
     });
 
-    new LabelComponent({
-      tui,
+    new Label({
+      parent: tui,
       theme: { base: characterColor },
       align: {
         horizontal: "center",
@@ -44,19 +49,20 @@ export class TUI {
       },
       rectangle: {
         get column() {
-          return ~~(tui.canvas.size.columns / 2 - this.width / 2);
+          return ~~(tui.canvas.size.value.columns / 2 - this.width / 2);
         },
         get row() {
-          return ~~(tui.canvas.size.rows / 2 - (this.height / 2 + 4));
+          return ~~(tui.canvas.size.value.rows / 2 - (this.height / 2 + 4));
         },
         height: 2,
         width: -1,
       },
-      value: value.data.character.name,
+      text: value.data.character.name,
+      zIndex: 0
     });
 
-    new LabelComponent({
-      tui,
+    new Label({
+      parent: tui,
       theme: { base: quoteColor },
       align: {
         horizontal: "center",
@@ -64,15 +70,16 @@ export class TUI {
       },
       rectangle: {
         get column() {
-          return ~~(tui.canvas.size.columns / 2 - this.width / 2);
+          return ~~(tui.canvas.size.value.columns / 2 - this.width / 2);
         },
         get row() {
-          return ~~(tui.canvas.size.rows / 2 - this.height / 2);
+          return ~~(tui.canvas.size.value.rows / 2 - this.height / 2);
         },
         height: 10,
         width: -1,
       },
-      value: `"${value.data.content}"`,
+      text: `"${value.data.content}"`,
+      zIndex: 0
     });
 
     tui.run();

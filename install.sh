@@ -1,6 +1,6 @@
 #!/bin/sh
 
-deno install --allow-net -g "$@" ./index.ts
+deno install --allow-net --allow-env -g "$@" ./index.ts
 
 # Check user's shell, it is not necesarry by any means, but it could be used for completions.
 # user_shell=$(echo $SHELL)

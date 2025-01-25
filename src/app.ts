@@ -14,26 +14,26 @@ export class App {
     const cmd = new Command()
       // Main command
       .name("aniquote")
-      .version("4.1.1")
+      .version("4.1.2")
       .description("A CLI tool for printing anime quotes in your terminal.")
       .globalType("color", new ColorType())
       .group("Customization options")
-      .globalOption("--tui", "Print the quote in a TUI instance.")
-      .globalOption(
+      .option("--tui", "Print the quote in a TUI instance.")
+      .option(
         "-t, --titleColor [color:color]",
         "Set anime title label color",
         {
           default: "red",
         },
       )
-      .globalOption(
+      .option(
         "-c, --characterColor [color:color]",
         "Set character label color",
         {
           default: "cyan",
         },
       )
-      .globalOption("-q, --quoteColor [color:color]", "Set quote label color", {
+      .option("-q, --quoteColor [color:color]", "Set quote label color", {
         default: "bold",
       })
       .action(async ({ titleColor, characterColor, quoteColor, tui }) => {
@@ -109,7 +109,7 @@ export class App {
         "upgrade",
         new UpgradeCommand({
           main: "index.ts",
-          args: ["--allow-net"],
+          args: ["--allow-net", "--allow-env", "--global"],
           provider: new GithubProvider({ repository: "kug1/aniquote" }),
         }),
       );
@@ -117,7 +117,7 @@ export class App {
     try {
       cmd.parse(Deno.args);
     } catch (error) {
-      this.logger.error(error);
+      this.logger.error(error)
     }
   }
 }
