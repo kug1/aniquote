@@ -39,7 +39,7 @@ export class Quotes {
         this.logger.error("Request limit reached.");
       }
     } catch (error) {
-      console.log(error)
+      // console.log(error)
       this.logger.error("Service unavailable.");
     }
   }
