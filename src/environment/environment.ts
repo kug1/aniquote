@@ -1,6 +1,6 @@
 export const environment = {
   // Base URL for the API.
-  baseUrl: "https://animechan.io/api/v1/quotes/",
+  baseUrl: "https://api.animechan.io/v1/quotes/",
 
   // Possible API endpoints.
 
